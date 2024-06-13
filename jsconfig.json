@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"] // copy string data, cut it out, then save file and re-paste it back in
     }
   }
 }
