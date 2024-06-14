@@ -1,11 +1,18 @@
-/** @type {import('tailwindcss').Config} */
+// tailwind.config.js
 module.exports = {
   content: [
-    './src/app/**/*.{js,ts,jsx,tsx}',
-    './src/components/**/*.{js,ts,jsx,tsx}',
+    './src/**/*.{js,jsx,ts,tsx}',
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        primary: '#ff0000', // Red color
+        secondary: '#000000', // Black color
+      },
+      backgroundImage: theme => ({
+        'red-black-gradient': 'linear-gradient(to right, #ff0000, #000000)',
+      }),
+    },
   },
   plugins: [],
 };
