@@ -1,22 +1,70 @@
-// src/app/page.js
 "use client";
-import { useState } from 'react';
+
+import { useEffect } from 'react';
 import Navbar from '../components/Navbar';
-import BackgroundComponent from '../components/BackgroundSlider';
+import './globals.css';
 
 export default function Home() {
+  useEffect(() => {
+
+    const createBackgroundAnimation = () => {
+      const container = document.querySelector('.background-container');
+
+      // Create and append animated cubes
+      for (let i = 0; i < 12; i++) {
+        const cube = document.createElement('div');
+        cube.className = 'animated-cube';
+        
+        // Create faces for the cube
+        for (let j = 0; j < 6; j++) {
+          const face = document.createElement('div');
+          face.className = 'face';
+          cube.appendChild(face);
+        }
+
+        // Position the cube randomly
+        cube.style.right = `${Math.random() * 100}vw`;
+        cube.style.left = `${Math.random() * 100}vw`;
+        cube.style.top = `${Math.random() * 100}vh`;
+        cube.style.bottom = `${Math.random() * 100}vh`;
+        
+        container.appendChild(cube);
+      }
+    };
+
+    createBackgroundAnimation();
+
+    return () => {
+      // Cleanup code if needed
+    };
+  }, []);
+
   return (
     <div className="relative">
-      <BackgroundComponent className="absolute inset-0 z-0" />
+      <div className="background-container"></div>
       <div className="relative z-10">
         <Navbar />
         <main className="w-full flex flex-col items-center justify-center flex-1 px-20 text-center mt-20">
+
+          {/* Home Section */}
+
+          <section id="home" className="min-h-screen flex flex-col items-center justify-center bg-secondary w-full py-20 text-white obelisk">
+            <div className="obelisk-content">
+              <h2 className="text-4xl font-bold mb-4">Welcome to my Portfolio Website!</h2>
+            </div>
+          </section>
+
+          {/* About Section */}
+
           <section id="about" className="min-h-screen flex flex-col items-center justify-center bg-secondary w-full py-20 text-white obelisk">
             <div className="obelisk-content">
               <h2 className="text-4xl font-bold mb-4">About Me</h2>
               <p className="mt-4 text-xl max-w-4xl">Hi, I'm Josh Breytspraak. I'm a Full Stack Web Developer with experience in various technologies. I love building web applications and learning new technologies.</p>
             </div>
           </section>
+
+          {/* Projects Section */}
+
           <section id="projects" className="min-h-screen flex flex-col items-center justify-center bg-secondary w-full py-20 text-white obelisk">
             <div className="obelisk-content">
               <h2 className="text-4xl font-bold mb-4">Projects</h2>
@@ -36,10 +84,13 @@ export default function Home() {
               </div>
             </div>
           </section>
+
+          {/* Contact Section */}
+
           <section id="contact" className="min-h-screen flex flex-col items-center justify-center bg-secondary w-full py-20 text-white obelisk">
             <div className="obelisk-content">
               <h2 className="text-4xl font-bold mb-4">Contact</h2>
-              <p className="mt-4 text-xl max-w-4xl">Feel free to get in touch with me via email or phone.</p>
+              <p className="mt-4 text-xl max-w-4xl">Feel free to get in touch with me.</p>
               <form className="mt-8 space-y-4 w-full max-w-md">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-white">Name</label>
@@ -59,6 +110,7 @@ export default function Home() {
               </form>
             </div>
           </section>
+          
         </main>
       </div>
     </div>

@@ -1,4 +1,4 @@
-// src/components/BackgroundSlider.js
+
 import React from 'react';
 import BackgroundSlider from 'react-background-slider';
 

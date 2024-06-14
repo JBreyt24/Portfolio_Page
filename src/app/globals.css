@@ -4,10 +4,8 @@
 
 html {
     scroll-behavior: smooth;
-    background-color: black;
 }
 
-/* src/app/globals.css */
 
 body {
     @apply bg-black text-white;
@@ -22,6 +20,7 @@ body {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
     transition: transform 0.3s ease-in-out;
     overflow: hidden;
+    opacity: 0.8;
 }
 
 .obelisk-content {
@@ -61,5 +60,70 @@ body {
 @layer utilities {
     .text-balance {
         text-wrap: balance;
+    }
+}
+
+
+/* Base styles for the background container */
+
+.background-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Ensure it's behind content */
+    background-color: #222; /* Dark background color */
+    perspective: 1000px; /* Perspective for 3D effect */
+}
+
+/* Animated cube */
+.animated-cube {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    transform-style: preserve-3d; /* Preserve 3D transformations */
+    transform: translateZ(-50px); /* Move cube backward for depth */
+    animation: rotateCube 10s linear infinite; /* Rotate animation */
+}
+
+.animated-cube .face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: red; /* Red color */
+    opacity: 0.8; /* Adjust opacity */
+}
+
+.animated-cube .face:nth-child(1) {
+    transform: rotateY(0deg) translateZ(50px);
+}
+
+.animated-cube .face:nth-child(2) {
+    transform: rotateY(90deg) translateZ(50px);
+}
+
+.animated-cube .face:nth-child(3) {
+    transform: rotateY(180deg) translateZ(50px);
+}
+
+.animated-cube .face:nth-child(4) {
+    transform: rotateY(-90deg) translateZ(50px);
+}
+
+.animated-cube .face:nth-child(5) {
+    transform: rotateX(90deg) translateZ(50px);
+}
+
+.animated-cube .face:nth-child(6) {
+    transform: rotateX(-90deg) translateZ(50px);
+}
+
+@keyframes rotateCube {
+    0% {
+        transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+    }
+    100% {
+        transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
     }
 }
