@@ -11,45 +11,42 @@ body {
     @apply bg-black text-white;
 }
 
+
 .obelisk {
     position: relative;
-    margin: 2rem 0;
-    padding: 2rem;
     background: linear-gradient(145deg, #1a1a1a, #000);
     border-radius: 20px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
     transition: transform 0.3s ease-in-out;
     overflow: hidden;
     opacity: 0.8;
+    width:max-content;
+    @media (min-width: 400px){
+        width: 80vw;
+        margin: 3rem 0;
+        padding: 2rem;
+    }
+}
+
+.project-card {
+    position: relative;
+    background: linear-gradient(145deg, #1a1a1a, #000);
+    border-radius: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease-in-out;
+    overflow: hidden;
+    opacity: 0.8;
+    width:95%;
+    /* @media (min-width: 400px){
+        width: 80vw;
+        margin: 3rem 0;
+        padding: 2rem;
+    } */
 }
 
 .obelisk-content {
-    position: relative;
+    /* position: relative; */
     z-index: 1;
-}
-
-.obelisk::before {
-    content: '';
-    position: absolute;
-    top: -20px;
-    left: 0;
-    right: 0;
-    bottom: -20px;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3));
-    transform: skewY(-10deg);
-    z-index: -1;
-}
-
-.obelisk::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -20px;
-    right: -20px;
-    bottom: 0;
-    background: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3));
-    transform: skewX(-10deg);
-    z-index: -1;
 }
 
 .obelisk:hover {
