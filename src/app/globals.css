@@ -88,6 +88,7 @@ body {
     height: 100%;
     background-color: rgb(202, 0, 0); /* Red color */
     opacity: 0.8; /* Adjust opacity */
+    border: 2px solid rgba(0, 0, 0, 0.5); /* Darker border for the lines */
 }
 
 .animated-cube .face:nth-child(1) {

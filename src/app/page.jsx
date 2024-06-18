@@ -5,6 +5,7 @@ import { useState, useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import { Typewriter } from 'react-simple-typewriter';
 import './globals.css';
+import { FaGithub, FaLinkedin, FaDiscord } from 'react-icons/fa';
 
 export default function Home() {
   const [modalOpen, setModalOpen] = useState(false);
@@ -17,22 +18,22 @@ export default function Home() {
     {
       title: 'ClimaTrack Weather App',
       description: 'A weather tracking application with real-time updates and forecasts that utilizes OpenWeather API and can be tailored to user-specific locations.',
-      image: '/images/climatrac.png',
-      details: 'Built with React and Node.js, ClimaTrack provides detailed weather information and forecasts.',
+      image: '/ClimaTrack-Forecast.png',
+      details: 'Built with full stack MERN, ClimaTrack provides detailed weather information and forecasts via locations the user specifies. Also utilizes JSON Web Tokens for user authentication.',
       link: '#',
     },
     {
-      title: 'Patient Manager App',
+      title: 'Hospital Manager App',
       description: 'A patient managing app designed to help optimize and streamline patient management systems and medical record entry in a hospital or clinical setting.',
-      image: '/images/project2.png',
-      details: 'Detailed information about Project 2.',
+      image: '/Patients-app.png',
+      details: 'Built in full stack MERN. Hospital Manager features full CRUD functionality, as well as log-in and log-out functionality using JSON Web Tokens (JWT) authentication.',
       link: '#',
     },
     {
       title: 'Magazine Sharing App',
-      description: 'A social app designed to allow users to create and share magazines with other users, while also allowing users to make changes to their profile information.',
-      image: '/images/project3.png',
-      details: 'Detailed information about Project 3.',
+      description: 'A social app designed to allow users to create and share magazines with other users, while also allowing the users to make changes to their profile information.',
+      image: '/Magazines-app.png',
+      details: 'Built using Python/Flask, this app features full CRUD functionality, as well as utilizing Session to allows users to securely login and out, and make changes to user profiles and creations.',
       link: '#',
     },
   ];
@@ -68,7 +69,7 @@ export default function Home() {
         return false;
       };
 
-      for (let i = 0; i < 12; i++) {
+      for (let i = 0; i < 20; i++) {
         const cube = document.createElement('div');
         cube.className = 'animated-cube';
 
@@ -123,10 +124,10 @@ export default function Home() {
                   delaySpeed={1000}
                 />
               </h1>
-              <p className="mt-4 text-xl max-w-4xl">
+              <p className="mt-20 text-xl max-w-4xl">
                 I am a Full Stack Web Developer with a passion for building web applications and exploring new technologies.
               </p>
-              <div className="mt-8">
+              <div className="mt-20">
                 <a href="#projects" className="px-6 py-3 bg-primary text-white rounded-md hover:bg-red-700 transition duration-300">
                   Explore My Work
                 </a>
@@ -138,8 +139,28 @@ export default function Home() {
 
           <section id="about" className="min-h-screen flex flex-col items-center justify-center bg-secondary py-20 text-white obelisk">
             <div className="obelisk-content">
-              <h2 className="text-4xl font-bold mb-4">About Me</h2>
-              <p className="mt-4 text-xl max-w-4xl">Hi, I'm Josh Breytspraak. I'm a Full Stack Web Developer with experience in various technologies. I love building web applications and learning new technologies.</p>
+              <h2 className="text-4xl font-bold mb-20">About Me</h2>
+              <p className="mt-4 text-xl max-w-4xl">
+              I'm an Entry-Level Full Stack Developer based in Jonesboro, AR, embarking on a unique path into the world of technology. 
+              My journey began with a passion for video games and music production, which sparked my interest in technology. 
+              With 16 years of experience as a guitarist and a Bachelor's degree in Music Performance from Arkansas State University, I've cultivated a strong foundation in creativity and problem-solving.
+
+              In 2023, I enrolled in the Colorado Technical University Accelerated Web Development Program and earned my Full-Stack Web Development certification in April 2024. 
+              Throughout this immersive program, I've sharpened my skills in JavaScript, Python, React.js, Next.js, Flask, Bootstrap, and Tailwind. 
+              I'm dedicated to mastering the craft of building intuitive interfaces and leveraging effective data management techniques.
+
+              I thrive on the challenges of creating and problem-solving, constantly pushing myself to explore new tools and technologies. 
+              I'm excited to integrate my diverse background in music and management with my newfound expertise in web development to innovate and deliver impactful software solutions.
+
+              </p>
+              <h3 className="text-4xl font-bold mt-20 mb-20">Check out my Resume!</h3>
+              <div className="mt-8">
+                <iframe
+                  src="/dev-resume.pdf"
+                  title="Resume"
+                  className="w-full h-screen"
+                />
+              </div>
             </div>
           </section>
 
@@ -167,44 +188,48 @@ export default function Home() {
           {/* Contact Section */}
 
           <section id="contact" className="min-h-screen flex flex-col items-center justify-center bg-secondary py-20 text-white obelisk">
-            <div className="obelisk-content">
-              <h2 className="text-4xl font-bold mb-4">Let's Connect!</h2>
-              <form className="flex flex-col items-center justify-center mt-8 space-y-4 w-full max-w-md">
-                <div className="w-full">
-                  <label htmlFor="name" className="block text-sm font-medium text-white">Name</label>
-                  <input type="text" id="name" className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary focus:border-primary sm:text-sm bg-black text-white" />
+            <div className="obelisk-content text-center">
+              <h2 className="text-4xl font-bold mb-20 transition-all duration-300 hover:text-primary hover:text-5xl">
+                Let's Connect!
+              </h2>
+              <p className="text-xl max-w-md mb-8">
+                Feel free to reach out to me via email or connect with me on social media:
+              </p>
+              <div className="flex flex-col space-y-4 items-center">
+                <a href="mailto:jbreytdev@gmail.com" className="text-primary underline text-2xl mb-8 transition-all duration-300 hover:text-blue-700">
+                  jbreytdev@gmail.com
+                </a>
+                <div className="flex space-x-4">
+                  <a href="https://github.com/JBreyt24" target="_blank" rel="noopener noreferrer" className="text-primary text-5xl transition-all duration-300 hover:text-green-700">
+                    <FaGithub />
+                  </a>
+                  <a href="https://www.linkedin.com/in/josh-breytspraak-251624b0/" target="_blank" rel="noopener noreferrer" className="text-primary text-5xl transition-all duration-300 hover:text-blue-500">
+                    <FaLinkedin />
+                  </a>
+                  <a href="https://discordapp.com/users/279118126027898890" target="_blank" rel="noopener noreferrer" className="text-primary text-5xl transition-all duration-300 hover:text-purple-600">
+                    <FaDiscord />
+                  </a>
                 </div>
-                <div className="w-full">
-                  <label htmlFor="email" className="block text-sm font-medium text-white">Email</label>
-                  <input type="email" id="email" className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary focus:border-primary sm:text-sm bg-black text-white" />
-                </div>
-                <div className="w-full">
-                  <label htmlFor="message" className="block text-sm font-medium text-white">Message</label>
-                  <textarea id="message" className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary focus:border-primary sm:text-sm bg-black text-white" rows="4"></textarea>
-                </div>
-                <div>
-                  <button type="submit" className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-primary hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary">Submit</button>
-                </div>
-              </form>
+              </div>
             </div>
           </section>
-          
+
         </main>
       </div>
       
       {/* Project Viewer */}
 
       {modalOpen && (
-        <div className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-75">
-          <div className="relative bg-white p-6 rounded-lg max-w-lg w-full">
+        <div className="fixed inset-0 flex items-center justify-center z-50 bg-dark bg-opacity-75 text-center">
+          <div className="relative bg-red-900 p-6 rounded-lg max-w-7xl w-full">
             <button
-              className="absolute top-4 right-4 text-black text-2xl"
+              className="absolute top-4 right-4 text-white text-2xl"
               onClick={closeModal}
             >
               &times;
             </button>
             <h2 className="text-2xl font-bold mb-4">{currentProject.title}</h2>
-            <img src={currentProject.image} alt={currentProject.title} className="w-full h-64 object-cover rounded-md mb-4" />
+            <img src={currentProject.image} alt={currentProject.title} className="w-full h-auto object-cover rounded-md mb-4" />
             <p className="text-lg">{currentProject.details}</p>
           </div>
         </div>
