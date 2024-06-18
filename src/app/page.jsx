@@ -1,9 +1,9 @@
-
 "use client";
 
 import { useState, useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import { Typewriter } from 'react-simple-typewriter';
+import Image from 'next/image';
 import './globals.css';
 import { FaGithub, FaLinkedin, FaDiscord } from 'react-icons/fa';
 
@@ -11,9 +11,7 @@ export default function Home() {
   const [modalOpen, setModalOpen] = useState(false);
   const [currentProject, setCurrentProject] = useState(null);
 
-
   // Project Cards
-
   const projects = [
     {
       title: 'ClimaTrack Weather App',
@@ -48,9 +46,7 @@ export default function Home() {
     setCurrentProject(null);
   };
 
-
   // Cube animation
-
   useEffect(() => {
     const createBackgroundAnimation = () => {
       const container = document.querySelector('.background-container');
@@ -115,7 +111,7 @@ export default function Home() {
             <div className="obelisk-content">
               <h1 className="text-5xl font-bold mb-4">
                 <Typewriter
-                  words={['Hi, I\'m Josh Breytspraak', 'Welcome to my Portfolio Site!']}
+                  words={['Hi, I&apos;m Josh Breytspraak', 'Welcome to my Portfolio Site!']}
                   loop={false}
                   cursor
                   cursorStyle='_'
@@ -125,7 +121,7 @@ export default function Home() {
                 />
               </h1>
               <p className="mt-20 text-xl max-w-4xl">
-                I am a Full Stack Web Developer with a passion for building web applications and exploring new technologies.
+                I&apos;m a Full Stack Web Developer with a passion for building web applications and exploring new technologies.
               </p>
               <div className="mt-20">
                 <a href="#projects" className="px-6 py-3 bg-primary text-white rounded-md hover:bg-red-700 transition duration-300">
@@ -141,17 +137,16 @@ export default function Home() {
             <div className="obelisk-content">
               <h2 className="text-4xl font-bold mb-20">About Me</h2>
               <p className="mt-4 text-xl max-w-4xl">
-              I'm an Entry-Level Full Stack Developer based in Jonesboro, AR, embarking on a unique path into the world of technology. 
-              My journey began with a passion for video games and music production, which sparked my interest in technology. 
-              With 16 years of experience as a guitarist and a Bachelor's degree in Music Performance from Arkansas State University, I've cultivated a strong foundation in creativity and problem-solving.
+                I&apos;m an Entry-Level Full Stack Developer based in Jonesboro, AR, embarking on a unique path into the world of technology. 
+                My journey began with a passion for video games and music production, which sparked my interest in technology. 
+                With 16 years of experience as a guitarist and a Bachelor&apos;s degree in Music Performance from Arkansas State University, I&apos;ve cultivated a strong foundation in creativity and problem-solving.
 
-              In 2023, I enrolled in the Colorado Technical University Accelerated Web Development Program and earned my Full-Stack Web Development certification in April 2024. 
-              Throughout this immersive program, I've sharpened my skills in JavaScript, Python, React.js, Next.js, Flask, Bootstrap, and Tailwind. 
-              I'm dedicated to mastering the craft of building intuitive interfaces and leveraging effective data management techniques.
+                In 2023, I enrolled in the Colorado Technical University Accelerated Web Development Program and earned my Full-Stack Web Development certification in April 2024. 
+                Throughout this immersive program, I&apos;ve sharpened my skills in JavaScript, Python, React.js, Next.js, Flask, Bootstrap, and Tailwind. 
+                I&apos;m dedicated to mastering the craft of building intuitive interfaces and leveraging effective data management techniques.
 
-              I thrive on the challenges of creating and problem-solving, constantly pushing myself to explore new tools and technologies. 
-              I'm excited to integrate my diverse background in music and management with my newfound expertise in web development to innovate and deliver impactful software solutions.
-
+                I thrive on the challenges of creating and problem-solving, constantly pushing myself to explore new tools and technologies. 
+                I&apos;m excited to integrate my diverse background in music and management with my newfound expertise in web development to innovate and deliver impactful software solutions.
               </p>
               <h3 className="text-4xl font-bold mt-20 mb-20">Check out my Resume!</h3>
               <div className="mt-8">
@@ -176,7 +171,7 @@ export default function Home() {
                     className="p-6 mt-6 mx-5 text-center border rounded-xl bg-black text-white w-72 cursor-pointer transition-transform transform hover:scale-105"
                     onClick={() => openModal(project)}
                   >
-                    <img src={project.image} alt={project.title} className="w-full h-48 object-cover rounded-md mb-4 transition-transform transform hover:scale-110" />
+                    <Image src={project.image} alt={project.title} width={288} height={192} className="object-cover rounded-md mb-4 transition-transform transform hover:scale-110" />
                     <h3 className="text-2xl font-bold">{project.title}</h3>
                     <p className="mt-2">{project.description}</p>
                   </div>
@@ -190,7 +185,7 @@ export default function Home() {
           <section id="contact" className="min-h-screen flex flex-col items-center justify-center bg-secondary py-20 text-white obelisk">
             <div className="obelisk-content text-center">
               <h2 className="text-4xl font-bold mb-20 transition-all duration-300 hover:text-primary hover:text-5xl">
-                Let's Connect!
+                Let&#39;s Connect!
               </h2>
               <p className="text-xl max-w-md mb-8">
                 Feel free to reach out to me via email or connect with me on social media:
@@ -216,7 +211,7 @@ export default function Home() {
 
         </main>
       </div>
-      
+
       {/* Project Viewer */}
 
       {modalOpen && (
@@ -229,7 +224,7 @@ export default function Home() {
               &times;
             </button>
             <h2 className="text-2xl font-bold mb-4">{currentProject.title}</h2>
-            <img src={currentProject.image} alt={currentProject.title} className="w-full h-auto object-cover rounded-md mb-4" />
+            <Image src={currentProject.image} alt={currentProject.title} width={800} height={450} className="object-cover rounded-md mb-4" />
             <p className="text-lg">{currentProject.details}</p>
           </div>
         </div>
