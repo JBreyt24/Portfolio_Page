@@ -7,6 +7,8 @@ html {
 }
 
 
+/* Sections Styling */
+
 body {
     @apply bg-black text-white;
 }
@@ -37,11 +39,6 @@ body {
     overflow: hidden;
     opacity: 0.8;
     width:95%;
-    /* @media (min-width: 400px){
-        width: 80vw;
-        margin: 3rem 0;
-        padding: 2rem;
-    } */
 }
 
 .obelisk-content {
@@ -61,7 +58,7 @@ body {
 }
 
 
-/* Base styles for the background container */
+/* Styles for the background container */
 
 .background-container {
     position: fixed;
@@ -75,20 +72,21 @@ body {
 }
 
 /* Animated cube */
+
 .animated-cube {
     position: absolute;
     width: 100px;
     height: 100px;
     transform-style: preserve-3d; /* Preserve 3D transformations */
     transform: translateZ(-50px); /* Move cube backward for depth */
-    animation: rotateCube 10s linear infinite; /* Rotate animation */
+    animation: rotateCube 15s linear infinite; /* Rotate animation; Higher the number, slower the speed*/
 }
 
 .animated-cube .face {
     position: absolute;
     width: 100%;
     height: 100%;
-    background-color: red; /* Red color */
+    background-color: rgb(202, 0, 0); /* Red color */
     opacity: 0.8; /* Adjust opacity */
 }
 
