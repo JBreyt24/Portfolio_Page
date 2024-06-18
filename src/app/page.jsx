@@ -10,24 +10,27 @@ export default function Home() {
   const [modalOpen, setModalOpen] = useState(false);
   const [currentProject, setCurrentProject] = useState(null);
 
+
+  // Project Cards
+
   const projects = [
     {
-      title: 'ClimaTrac Weather App',
-      description: 'A weather tracking application with real-time updates and forecasts.',
+      title: 'ClimaTrack Weather App',
+      description: 'A weather tracking application with real-time updates and forecasts that utilizes OpenWeather API and can be tailored to user-specific locations.',
       image: '/images/climatrac.png',
-      details: 'Built with React and Node.js, ClimaTrac provides detailed weather information and forecasts.',
+      details: 'Built with React and Node.js, ClimaTrack provides detailed weather information and forecasts.',
       link: '#',
     },
     {
-      title: 'Project 2',
-      description: 'Description of Project 2.',
+      title: 'Patient Manager App',
+      description: 'A patient managing app designed to help optimize and streamline patient management systems and medical record entry in a hospital or clinical setting.',
       image: '/images/project2.png',
       details: 'Detailed information about Project 2.',
       link: '#',
     },
     {
-      title: 'Project 3',
-      description: 'Description of Project 3.',
+      title: 'Magazine Sharing App',
+      description: 'A social app designed to allow users to create and share magazines with other users, while also allowing users to make changes to their profile information.',
       image: '/images/project3.png',
       details: 'Detailed information about Project 3.',
       link: '#',
@@ -43,6 +46,9 @@ export default function Home() {
     setModalOpen(false);
     setCurrentProject(null);
   };
+
+
+  // Cube animation
 
   useEffect(() => {
     const createBackgroundAnimation = () => {
@@ -146,7 +152,7 @@ export default function Home() {
                 {projects.map((project, index) => (
                   <div
                     key={index}
-                    className="p-6 mt-6 text-left border rounded-xl bg-black text-white w-72 cursor-pointer transition-transform transform hover:scale-105"
+                    className="p-6 mt-6 mx-5 text-center border rounded-xl bg-black text-white w-72 cursor-pointer transition-transform transform hover:scale-105"
                     onClick={() => openModal(project)}
                   >
                     <img src={project.image} alt={project.title} className="w-full h-48 object-cover rounded-md mb-4 transition-transform transform hover:scale-110" />
@@ -159,7 +165,7 @@ export default function Home() {
           </section>
 
           {/* Contact Section */}
-          
+
           <section id="contact" className="min-h-screen flex flex-col items-center justify-center bg-secondary py-20 text-white obelisk">
             <div className="obelisk-content">
               <h2 className="text-4xl font-bold mb-4">Let's Connect!</h2>
