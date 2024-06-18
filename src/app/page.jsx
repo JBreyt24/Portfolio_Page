@@ -164,21 +164,29 @@ export default function Home() {
           <section id="projects" className="min-h-screen flex flex-col items-center justify-center bg-secondary py-20 text-white obelisk">
             <div className="obelisk-content">
               <h2 className="text-4xl font-bold mb-4">Projects</h2>
-              <div className="flex flex-wrap items-center justify-around max-w-4xl mt-6 py-20">
+              <div className="flex flex-wrap justify-center max-w-6xl mt-6 py-10">
                 {projects.map((project, index) => (
                   <div
                     key={index}
-                    className="p-6 mt-6 mx-5 text-center border rounded-xl bg-black text-white w-72 cursor-pointer transition-transform transform hover:scale-105"
+                    className="p-4 md:p-6 mx-2 md:mx-4 text-center border rounded-xl bg-black text-white cursor-pointer transition-transform transform hover:scale-105"
                     onClick={() => openModal(project)}
+                    style={{ minWidth: '280px', maxWidth: '320px' }} // Adjust min and max width as needed
                   >
-                    <Image src={project.image} alt={project.title} width={288} height={192} className="object-cover rounded-md mb-4 transition-transform transform hover:scale-110" />
-                    <h3 className="text-2xl font-bold">{project.title}</h3>
+                    <Image
+                      src={project.image}
+                      alt={project.title}
+                      width={320}
+                      height={180}
+                      className="object-cover rounded-md mb-4 transition-transform transform hover:scale-110"
+                    />
+                    <h3 className="text-xl md:text-2xl font-bold">{project.title}</h3> {/* Adjust text size as needed */}
                     <p className="mt-2">{project.description}</p>
                   </div>
                 ))}
               </div>
             </div>
           </section>
+
 
           {/* Contact Section */}
 
@@ -216,19 +224,22 @@ export default function Home() {
 
       {modalOpen && (
         <div className="fixed inset-0 flex items-center justify-center z-50 bg-dark bg-opacity-75 text-center">
-          <div className="relative bg-red-900 p-6 rounded-lg max-w-7xl w-full">
+          <div className="relative bg-red-900 p-8 rounded-lg max-w-7xl w-full">
             <button
               className="absolute top-4 right-4 text-white text-2xl"
               onClick={closeModal}
             >
               &times;
             </button>
-            <h2 className="text-2xl font-bold mb-4">{currentProject.title}</h2>
-            <Image src={currentProject.image} alt={currentProject.title} width={800} height={450} className="object-cover rounded-md mb-4" />
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">{currentProject.title}</h2>
+            <div className="flex justify-center">
+              <img src={currentProject.image} alt={currentProject.title} className="w-full md:max-w-7xl h-auto object-cover rounded-md mb-4" />
+            </div>
             <p className="text-lg">{currentProject.details}</p>
           </div>
         </div>
       )}
+
 
     </div>
   );
