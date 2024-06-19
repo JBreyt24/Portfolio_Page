@@ -111,7 +111,7 @@ export default function Home() {
             <div className="obelisk-content">
               <h1 className="text-5xl font-bold mb-4">
                 <Typewriter
-                  words={['Hi, I&apos;m Josh Breytspraak', 'Welcome to my Portfolio Site!']}
+                  words={['Hi, I am Josh Breytspraak', 'Welcome to my Portfolio Site!']}
                   loop={false}
                   cursor
                   cursorStyle='_'
