@@ -10,6 +10,7 @@ import { FaGithub, FaLinkedin, FaDiscord } from 'react-icons/fa';
 export default function Home() {
   const [modalOpen, setModalOpen] = useState(false);
   const [currentProject, setCurrentProject] = useState(null);
+  const [resumeModalOpen, setResumeModalOpen] = useState(false);
 
   // Project Cards
   const projects = [
@@ -44,6 +45,14 @@ export default function Home() {
   const closeModal = () => {
     setModalOpen(false);
     setCurrentProject(null);
+  };
+
+  const openResumeModal = () => {
+    setResumeModalOpen(true);
+  };
+
+  const closeResumeModal = () => {
+    setResumeModalOpen(false);
   };
 
   // Cube animation
@@ -103,13 +112,13 @@ export default function Home() {
       <div className="background-container"></div>
       <div className="relative z-10">
         <Navbar />
-        <main className="w-full flex flex-col items-center justify-center flex-1 px-20 text-center mt-20">
+        <main className="w-full flex flex-col items-center justify-center flex-1 px-4 md:px-20 text-center mt-20">
 
           {/* Home Section */}
 
           <section id="home" className="min-h-screen flex flex-col items-center justify-center bg-secondary py-20 text-white obelisk">
             <div className="obelisk-content">
-              <h1 className="text-5xl font-bold mb-4">
+              <h1 className="text-3xl md:text-5xl font-bold mb-4">
                 <Typewriter
                   words={['Hi, I am Josh Breytspraak', 'Welcome to my Portfolio Site!']}
                   loop={false}
@@ -120,10 +129,10 @@ export default function Home() {
                   delaySpeed={1000}
                 />
               </h1>
-              <p className="mt-20 text-xl max-w-4xl">
+              <p className="mt-6 md:mt-20 text-lg md:text-xl max-w-4xl">
                 I&apos;m a Full Stack Web Developer with a passion for building web applications and exploring new technologies.
               </p>
-              <div className="mt-20">
+              <div className="mt-6 md:mt-20">
                 <a href="#projects" className="px-6 py-3 bg-primary text-white rounded-md hover:bg-red-700 transition duration-300">
                   Explore My Work
                 </a>
@@ -135,8 +144,8 @@ export default function Home() {
 
           <section id="about" className="min-h-screen flex flex-col items-center justify-center bg-secondary py-20 text-white obelisk">
             <div className="obelisk-content">
-              <h2 className="text-4xl font-bold mb-20">About Me</h2>
-              <p className="mt-4 text-xl max-w-4xl">
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 md:mb-20">About Me</h2>
+              <p className="mt-4 text-lg md:text-xl max-w-4xl">
                 I&apos;m an Entry-Level Full Stack Developer based in Jonesboro, AR, embarking on a unique path into the world of technology. 
                 My journey began with a passion for video games and music production, which sparked my interest in technology. 
                 With 16 years of experience as a guitarist and a Bachelor&apos;s degree in Music Performance from Arkansas State University, I&apos;ve cultivated a strong foundation in creativity and problem-solving.
@@ -148,13 +157,14 @@ export default function Home() {
                 I thrive on the challenges of creating and problem-solving, constantly pushing myself to explore new tools and technologies. 
                 I&apos;m excited to integrate my diverse background in music and management with my newfound expertise in web development to innovate and deliver impactful software solutions.
               </p>
-              <h3 className="text-4xl font-bold mt-20 mb-20">Check out my Resume!</h3>
+              <h3 className="text-3xl md:text-4xl font-bold mt-6 md:mt-20 mb-6 md:mb-20">Check out my Resume!</h3>
               <div className="mt-8">
-                <iframe
-                  src="/dev-resume.pdf"
-                  title="Resume"
-                  className="w-full h-screen"
-                />
+                <button
+                  onClick={openResumeModal}
+                  className="px-6 py-3 bg-primary text-white rounded-md hover:bg-red-700 transition duration-300"
+                >
+                  View Resume
+                </button>
               </div>
             </div>
           </section>
@@ -163,14 +173,14 @@ export default function Home() {
 
           <section id="projects" className="min-h-screen flex flex-col items-center justify-center bg-secondary py-20 text-white obelisk">
             <div className="obelisk-content">
-              <h2 className="text-4xl font-bold mb-4">Projects</h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">Projects</h2>
               <div className="flex flex-wrap justify-center max-w-6xl mt-6 py-10">
                 {projects.map((project, index) => (
                   <div
                     key={index}
                     className="p-4 md:p-6 mx-2 md:mx-4 text-center border rounded-xl bg-black text-white cursor-pointer transition-transform transform hover:scale-105"
                     onClick={() => openModal(project)}
-                    style={{ minWidth: '280px', maxWidth: '320px' }} // Adjust min and max width as needed
+                    style={{ minWidth: '280px', maxWidth: '320px' }}
                   >
                     <Image
                       src={project.image}
@@ -179,7 +189,7 @@ export default function Home() {
                       height={180}
                       className="object-cover rounded-md mb-4 transition-transform transform hover:scale-110"
                     />
-                    <h3 className="text-xl md:text-2xl font-bold">{project.title}</h3> {/* Adjust text size as needed */}
+                    <h3 className="text-xl md:text-2xl font-bold">{project.title}</h3>
                     <p className="mt-2">{project.description}</p>
                   </div>
                 ))}
@@ -187,29 +197,28 @@ export default function Home() {
             </div>
           </section>
 
-
           {/* Contact Section */}
 
           <section id="contact" className="min-h-screen flex flex-col items-center justify-center bg-secondary py-20 text-white obelisk">
             <div className="obelisk-content text-center">
-              <h2 className="text-4xl font-bold mb-20 transition-all duration-300 hover:text-primary hover:text-5xl">
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 md:mb-20 transition-all duration-300 hover:text-primary hover:text-5xl">
                 Let&#39;s Connect!
               </h2>
-              <p className="text-xl max-w-md mb-8">
+              <p className="text-lg md:text-xl max-w-md mb-8">
                 Feel free to reach out to me via email or connect with me on social media:
               </p>
               <div className="flex flex-col space-y-4 items-center">
-                <a href="mailto:jbreytdev@gmail.com" className="text-primary underline text-2xl mb-8 transition-all duration-300 hover:text-blue-700">
+                <a href="mailto:jbreytdev@gmail.com" className="text-primary underline text-xl md:text-2xl mb-8 transition-all duration-300 hover:text-blue-700">
                   jbreytdev@gmail.com
                 </a>
                 <div className="flex space-x-4">
-                  <a href="https://github.com/JBreyt24" target="_blank" rel="noopener noreferrer" className="text-primary text-5xl transition-all duration-300 hover:text-green-700">
+                  <a href="https://github.com/JBreyt24" target="_blank" rel="noopener noreferrer" className="text-primary text-4xl md:text-5xl transition-all duration-300 hover:text-green-700">
                     <FaGithub />
                   </a>
-                  <a href="https://www.linkedin.com/in/josh-breytspraak-251624b0/" target="_blank" rel="noopener noreferrer" className="text-primary text-5xl transition-all duration-300 hover:text-blue-500">
+                  <a href="https://www.linkedin.com/in/josh-breytspraak-251624b0/" target="_blank" rel="noopener noreferrer" className="text-primary text-4xl md:text-5xl transition-all duration-300 hover:text-blue-500">
                     <FaLinkedin />
                   </a>
-                  <a href="https://discordapp.com/users/279118126027898890" target="_blank" rel="noopener noreferrer" className="text-primary text-5xl transition-all duration-300 hover:text-purple-600">
+                  <a href="https://discordapp.com/users/279118126027898890" target="_blank" rel="noopener noreferrer" className="text-primary text-4xl md:text-5xl transition-all duration-300 hover:text-purple-600">
                     <FaDiscord />
                   </a>
                 </div>
@@ -221,10 +230,9 @@ export default function Home() {
       </div>
 
       {/* Project Viewer */}
-
       {modalOpen && (
         <div className="fixed inset-0 flex items-center justify-center z-50 bg-dark bg-opacity-75 text-center">
-          <div className="relative bg-red-900 p-8 rounded-lg max-w-7xl w-full">
+          <div className="relative bg-red-900 p-8 rounded-lg max-w-7xl w-full mx-4">
             <button
               className="absolute top-4 right-4 text-white text-2xl"
               onClick={closeModal}
@@ -240,6 +248,27 @@ export default function Home() {
         </div>
       )}
 
+      {/* Resume Viewer */}
+      {resumeModalOpen && (
+        <div className="fixed inset-0 flex items-center justify-center z-50 bg-dark bg-opacity-75 text-center">
+          <div className="relative bg-red-900 p-8 rounded-lg max-w-7xl w-full mx-4">
+            <button
+              className="absolute top-4 right-4 text-white text-2xl"
+              onClick={closeResumeModal}
+            >
+              &times;
+            </button>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">My Resume</h2>
+            <div className="flex justify-center">
+              <iframe
+                src="/dev-resume.pdf"
+                title="Resume"
+                className="w-full h-96 md:h-[80vh]"
+              />
+            </div>
+          </div>
+        </div>
+      )}
 
     </div>
   );
