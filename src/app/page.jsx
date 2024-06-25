@@ -12,7 +12,6 @@ export default function Home() {
   const [currentProject, setCurrentProject] = useState(null);
   const [resumeModalOpen, setResumeModalOpen] = useState(false);
 
-  // Project Cards
   const projects = [
     {
       title: 'ClimaTrack Weather App',
@@ -55,7 +54,6 @@ export default function Home() {
     setResumeModalOpen(false);
   };
 
-  // Cube animation
   useEffect(() => {
     const createBackgroundAnimation = () => {
       const container = document.querySelector('.background-container');
@@ -115,7 +113,6 @@ export default function Home() {
         <main className="w-full flex flex-col items-center justify-center flex-1 px-4 md:px-20 text-center mt-20">
 
           {/* Home Section */}
-
           <section id="home" className="min-h-screen flex flex-col items-center justify-center bg-secondary py-20 text-white obelisk">
             <div className="obelisk-content">
               <h1 className="text-3xl md:text-5xl font-bold mb-4">
@@ -141,7 +138,6 @@ export default function Home() {
           </section>
 
           {/* About Section */}
-
           <section id="about" className="min-h-screen flex flex-col items-center justify-center bg-secondary py-20 text-white obelisk">
             <div className="obelisk-content">
               <h2 className="text-3xl md:text-4xl font-bold mb-6 md:mb-20">About Me</h2>
@@ -170,7 +166,6 @@ export default function Home() {
           </section>
 
           {/* Projects Section */}
-
           <section id="projects" className="min-h-screen flex flex-col items-center justify-center bg-secondary py-20 text-white obelisk">
             <div className="obelisk-content">
               <h2 className="text-3xl md:text-4xl font-bold mb-4">Projects</h2>
@@ -198,7 +193,6 @@ export default function Home() {
           </section>
 
           {/* Contact Section */}
-
           <section id="contact" className="min-h-screen flex flex-col items-center justify-center bg-secondary py-20 text-white obelisk">
             <div className="obelisk-content text-center">
               <h2 className="text-3xl md:text-4xl font-bold mb-6 md:mb-20 transition-all duration-300 hover:text-primary hover:text-5xl">
@@ -269,7 +263,6 @@ export default function Home() {
           </div>
         </div>
       )}
-
     </div>
   );
 }
