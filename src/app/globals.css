@@ -23,7 +23,7 @@ body {
     overflow: hidden;
     opacity: 0.8;
     width:max-content;
-    @media (min-width: 400px){
+    @media (min-width: 300px){
         width: 80vw;
         margin: 3rem 0;
         padding: 2rem;
