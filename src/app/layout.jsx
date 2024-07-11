@@ -17,10 +17,16 @@ export const metadata = {
 export default function Layout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}
-        <Analytics/>
-        <SpeedInsights/>
-        <Navbar/>
+      <head>
+        <title>{metadata.title}</title>
+        <meta name="description" content={metadata.description} />
+        <link rel="icon" href="/portfolio.png" />
+      </head>
+      <body className={inter.className}>
+        {children}
+        <Analytics />
+        <SpeedInsights />
+        <Navbar />
       </body>
     </html>
   );
