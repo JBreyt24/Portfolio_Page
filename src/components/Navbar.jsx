@@ -43,12 +43,9 @@ export default function Navbar() {
 
             {/* Mobile Navbar */}
             <div className="lg:hidden flex items-center">
-                {/* Hamburger Menu */}
                 <button onClick={toggleMenu} className="text-white focus:outline-none">
                     <AlignJustify size={24} />
                 </button>
-
-                {/* Space */}
                 <div className="ml-4 flex-grow"></div>
 
                 {/* Social Media Icons */}
