@@ -255,7 +255,7 @@ export default function Home() {
             <h2 className="text-3xl md:text-4xl font-bold mb-4">My Resume</h2>
             <div className="flex justify-center">
               <iframe
-                src="/dev-resume.pdf"
+                src="/resume.pdf"
                 title="Resume"
                 className="w-full h-96 md:h-[80vh]"
               />
