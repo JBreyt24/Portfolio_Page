@@ -16,7 +16,7 @@ export default function Home() {
     {
       title: 'ClimaTrack Weather App',
       description: 'A weather tracking application with real-time updates and forecasts that utilizes OpenWeather API and can be tailored to user-specific locations.',
-      image: '/ClimaTrack Logo.png',
+      image: '/mountain.png',
       video: '/ClimaTrack-Demo.mp4',
       details: 'Built with full stack MERN, ClimaTrack provides detailed weather information and forecasts via locations the user specifies. Also utilizes JSON Web Tokens for user authentication.',
       link: '#',
