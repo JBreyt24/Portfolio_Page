@@ -16,14 +16,16 @@ export default function Home() {
     {
       title: 'ClimaTrack Weather App',
       description: 'A weather tracking application with real-time updates and forecasts that utilizes OpenWeather API and can be tailored to user-specific locations.',
-      image: '/ClimaTrack-Forecast.png',
+      image: '/ClimaTrack Logo.png',
+      video: '/ClimaTrack-Demo.mp4',
       details: 'Built with full stack MERN, ClimaTrack provides detailed weather information and forecasts via locations the user specifies. Also utilizes JSON Web Tokens for user authentication.',
       link: '#',
     },
     {
       title: 'Hospital Manager App',
       description: 'A patient managing app designed to help optimize and streamline patient management systems and medical record entry in a hospital or clinical setting.',
-      image: '/Patients-app.png',
+      image: '/hospital.png',
+      video: '/',
       details: 'Built in full stack MERN. Hospital Manager features full CRUD functionality, as well as log-in and log-out functionality using JSON Web Tokens (JWT) authentication.',
       link: '#',
     },
@@ -31,6 +33,7 @@ export default function Home() {
       title: 'Magazine Sharing App',
       description: 'A social app designed to allow users to create and share magazines with other users, while also allowing the users to make changes to their profile information.',
       image: '/Magazines-app.png',
+      video: '/',
       details: 'Built using Python/Flask, this app features full CRUD functionality, as well as utilizing Session to allows users to securely login and out, and make changes to user profiles and creations.',
       link: '#',
     },
@@ -117,7 +120,7 @@ export default function Home() {
             <div className="obelisk-content">
               <h1 className="text-3xl md:text-5xl font-bold mb-4">
                 <Typewriter
-                  words={['Hi, I am Josh Breytspraak', 'Welcome to my Portfolio Site!']}
+                  words={["Hi, I'm Josh Breytspraak", "Welcome to my Portfolio Site!"]}
                   loop={false}
                   cursor
                   cursorStyle='_'
@@ -162,32 +165,42 @@ export default function Home() {
             </div>
           </section>
 
-          {/* Projects Section */}
-          <section id="projects" className="min-h-screen flex flex-col items-center justify-center bg-secondary py-20 text-white obelisk">
-            <div className="obelisk-content">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">Projects</h2>
-              <div className="flex flex-wrap justify-center max-w-6xl mt-6 py-10">
-                {projects.map((project, index) => (
-                  <div
-                    key={index}
-                    className="p-4 md:p-6 mx-2 md:mx-4 text-center border rounded-xl bg-black text-white cursor-pointer transition-transform transform hover:scale-105"
-                    onClick={() => openModal(project)}
-                    style={{ minWidth: '280px', maxWidth: '320px' }}
-                  >
-                    <Image
-                      src={project.image}
-                      alt={project.title}
-                      width={320}
-                      height={180}
-                      className="object-cover rounded-md mb-4 transition-transform transform hover:scale-110"
-                    />
-                    <h3 className="text-xl md:text-2xl font-bold">{project.title}</h3>
-                    <p className="mt-2">{project.description}</p>
-                  </div>
-                ))}
+      {/* Projects Section */}
+      <section id="projects" className="min-h-screen flex flex-col items-center justify-center bg-secondary py-20 text-white obelisk">
+        <div className="obelisk-content">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">Projects</h2>
+
+          <div className="flex flex-wrap justify-center gap-10 max-w-6xl mt-6 py-10">
+            {projects.map((project, index) => (
+              <div key={index} className="flex flex-col items-center">
+                {/* Card */}
+                <div
+                  className="p-4 md:p-6 text-center border rounded-xl bg-black text-white transition-transform transform hover:scale-105"
+                  style={{ minWidth: '280px', maxWidth: '320px' }}
+                >
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    width={320}
+                    height={180}
+                    className="object-cover rounded-md mb-4 transition-transform transform hover:scale-110"
+                  />
+                  <h3 className="text-xl md:text-2xl font-bold">{project.title}</h3>
+                  <p className="mt-2">{project.description}</p>
+                </div>
+
+                {/* Button outside the card */}
+                <button
+                  onClick={() => openModal(project)}
+                  className="mt-4 bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-lg transition-colors duration-200"
+                >
+                  View Demo
+                </button>
               </div>
-            </div>
-          </section>
+            ))}
+          </div>
+        </div>
+      </section>
 
           {/* Contact Section */}
           <section id="contact" className="min-h-screen flex flex-col items-center justify-center bg-secondary py-20 text-white obelisk">
@@ -220,24 +233,30 @@ export default function Home() {
         </main>
       </div>
 
-      {/* Project Viewer */}
-      {modalOpen && (
-        <div className="fixed inset-0 flex items-center justify-center z-50 bg-dark bg-opacity-75 text-center">
-          <div className="relative bg-red-900 p-8 rounded-lg max-w-7xl w-full mx-4">
-            <button
-              className="absolute top-4 right-4 text-white text-2xl"
-              onClick={closeModal}
-            >
-              &times;
-            </button>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">{currentProject.title}</h2>
-            <div className="flex justify-center">
-              <img src={currentProject.image} alt={currentProject.title} className="w-full md:max-w-7xl h-auto object-cover rounded-md mb-4" />
-            </div>
-            <p className="text-lg">{currentProject.details}</p>
-          </div>
-        </div>
-      )}
+{/* Project Viewer Modal */}
+{modalOpen && currentProject && (
+  <div className="fixed inset-0 flex items-center justify-center z-50 bg-dark bg-opacity-75 text-center">
+    <div className="relative bg-red-900 p-8 rounded-lg max-w-7xl w-full mx-4">
+      <button
+        className="absolute top-4 right-4 text-white text-2xl"
+        onClick={closeModal}
+      >
+        &times;
+      </button>
+      <h2 className="text-3xl md:text-4xl font-bold mb-4">{currentProject.title}</h2>
+      <div className="flex justify-center">
+        {currentProject.video && (
+          <video
+            src={currentProject.video}
+            controls
+            className="w-full md:max-w-7xl h-auto object-cover rounded-md mb-4"
+          />
+        )}
+      </div>
+      <p className="text-lg">{currentProject.details}</p>
+    </div>
+  </div>
+)}
 
       {/* Resume Viewer */}
       {resumeModalOpen && (
