@@ -22,7 +22,7 @@ export default function Home() {
       link: '#',
     },
     {
-      title: 'Hospital Manager App',
+      title: 'CareSync Patient Care Manager App',
       description: 'A patient managing app designed to help optimize and streamline patient management systems and medical record entry in a hospital or clinical setting.',
       image: '/hospital.png',
       video: '/',
