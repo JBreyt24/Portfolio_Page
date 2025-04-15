@@ -142,16 +142,13 @@ export default function Home() {
             <div className="obelisk-content">
               <h2 className="text-3xl md:text-4xl font-bold mb-6 md:mb-20">About Me</h2>
               <p className="mt-4 text-lg md:text-xl max-w-4xl">
-                I&apos;m an Entry-Level Full Stack Developer based in Jonesboro, AR, embarking on a unique path into the world of technology. 
-                My journey began with a passion for video games and music production, which sparked my interest in technology. 
-                With 16 years of experience as a guitarist and a Bachelor&apos;s degree in Music Performance from Arkansas State University, I&apos;ve cultivated a strong foundation in creativity and problem-solving.
+                I’m a Full Stack Developer based in Jonesboro, AR, with a passion for building functional, user-centered web applications. My journey into tech began through a love for video games and music production, evolving into a drive to create and code with purpose.
 
-                In 2023, I enrolled in the Colorado Technical University Accelerated Web Development Program and earned my Full-Stack Web Development certification in April 2024. 
-                Throughout this immersive program, I&apos;ve sharpened my skills in JavaScript, Python, React.js, Next.js, Flask, Bootstrap, and Tailwind. 
-                I&apos;m dedicated to mastering the craft of building intuitive interfaces and leveraging effective data management techniques.
+                In 2024, I completed the Full-Stack Web Development program at Colorado Technical University, where I gained hands-on experience in modern web technologies including JavaScript, Python, React.js, and Next.js.
 
-                I thrive on the challenges of creating and problem-solving, constantly pushing myself to explore new tools and technologies. 
-                I&apos;m excited to integrate my diverse background in music and management with my newfound expertise in web development to innovate and deliver impactful software solutions.
+                I specialize in developing responsive front-end interfaces and scalable back-end systems, with a growing focus on clean code, performance optimization, and intuitive UI/UX. I’m constantly exploring new frameworks and best practices to deepen my skills and stay current in the ever-evolving tech landscape.
+
+                Whether collaborating on a team or leading a project, I bring a blend of creative problem-solving, technical know-how, and real-world management experience. I’m excited to build innovative software solutions that make a difference.
               </p>
               <h3 className="text-3xl md:text-4xl font-bold mt-6 md:mt-20 mb-6 md:mb-20">Check out my Resume!</h3>
               <div className="mt-8">
