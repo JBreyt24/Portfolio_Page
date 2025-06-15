@@ -33,7 +33,7 @@ export default function Home() {
       title: 'MagShare Magazine Sharing App',
       description: 'A social app designed to allow users to create and share magazines with other users, while also allowing the users to make changes to their profile information.',
       image: '/magshare.png',
-      video: '/',
+      video: 'https://portfolio-media-pull-zone.b-cdn.net/MagShare-Demo.mp4',
       details: 'Built using Python/Flask, this app features full CRUD functionality, as well as utilizing Session to allows users to securely login and out, and make changes to user profiles and creations.',
       link: '#',
     },
